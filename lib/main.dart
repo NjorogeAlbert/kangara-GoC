@@ -13,19 +13,27 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Kangara GoC '),
+          title: Text(
+            'Kangara GoC ',
+            style: TextStyle(
+              color: Colors.deepPurple,
+              fontSize: 28,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
           backgroundColor: Colors.tealAccent,
-          leading: Icon(Icons.menu),
+          elevation: 0,
+          leading: Icon(Icons.menu, color: Colors.deepPurple, size: 30),
           actions: [
             IconButton(
-              icon: Icon(Icons.settings),
+              icon: Icon(Icons.settings, color: Colors.deepPurple, size: 30),
               onPressed: () {
                 // Action for settings button
               },
             ),
             SizedBox(width: 10),
             IconButton(
-              icon: Icon(Icons.search),
+              icon: Icon(Icons.search, color: Colors.deepPurple, size: 30),
               onPressed: () {
                 // Action for search button
               },
@@ -33,11 +41,26 @@ class MyApp extends StatelessWidget {
             SizedBox(width: 10),
           ],
         ),
-        body: Center(
+        // ignore: avoid_unnecessary_containers
+        body: Container(
+          decoration: BoxDecoration(
+            border: Border.all(
+              color: const Color.fromARGB(255, 176, 173, 173),
+              width: 0,
+            ),
+            borderRadius: BorderRadius.circular(8),
+            color: Colors.yellowAccent,
+          ),
+          margin: const EdgeInsets.only(top: 10),
+          alignment: Alignment.center, // centers the child
+          padding: const EdgeInsets.all(10), // spacing inside container
+          height: 60,
+          width: double.infinity,
+          // optional spacing inside container
           child: Text(
-            'Hello',
+            'Hello World!',
             style: TextStyle(
-              fontSize: 24,
+              fontSize: 14,
               fontWeight: FontWeight.bold,
               color: Colors.blue,
             ),
@@ -55,7 +78,10 @@ class Homepage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text('Homepage')),
-      body: Center(child: Text('Welcome to the Homepage!')),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [Container(height: 30, width: 30, color: Colors.yellow)],
+      ),
     );
   }
 }
