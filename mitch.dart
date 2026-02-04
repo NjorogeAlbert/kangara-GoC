@@ -1,20 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_mitch_koko/main.dart';
 
-void main() {
-  runApp(MyApp(home: Homepage()));
-}
-class MyApp extends StatefulWidget {
-  const MyApp({super.key, required Homepage home});
+class Mitch extends StatelessWidget {
+  const Mitch({super.key});
 
-  @override
-  State<MyApp> createState() => _MyAppState();
-}
-
-class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-    throw UnimplementedError();
+    return Scaffold(
+      appBar: AppBar(title: Text('Mitch'), backgroundColor: Colors.tealAccent),
+      body: Center(child: Text('Profile Page')),
+    );
   }
 }
